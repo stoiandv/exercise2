@@ -1,0 +1,34 @@
+# exercise2
+import math
+def tetrahedron_filled(tetrahedrons, water):
+	print "\nInput the lenght of the side on the tetrahedron" 
+	print "To stop press -1!\n"
+	j=1
+	tetrahedrons=[]
+	b=0
+	b=int(b)
+	maximum_tetrahedrons=b
+	while j<2:
+		length= raw_input("The length of the side:")
+		length=int(length)
+		if length==-1:
+			print tetrahedrons
+			break
+		else:
+			tetrahedrons.append(length)
+		print tetrahedrons
+	print "Enter the amount of water(litres):"
+	water= raw_input()
+	water=int(float(water))
+	for num in tetrahedrons:
+		dimension=math.sqrt(2.0)*(num**3)*0.001/12.0
+		if dimension>water:
+			continue
+		else:
+			water=water-dimension
+			maximum_tetrahedrons=maximum_tetrahedrons+1
+	print "You can fill %d of tetrahedrons with the amount of water!" %(maximum_tetrahedrons)
+length= raw_input("Press any number to start entering edge lengths!")
+length=int(float(length))
+water=length
+tetrahedron_filled(length,water)
